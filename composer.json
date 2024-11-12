@@ -1,6 +1,6 @@
 {
     "name": "franknv/php-playground",
-    "description": "Learn PHP and Github Actions.",
+    "description": "Learn PHP and Github Actions",
     "type": "library",
     "license": "Apache-2.0",
     "require": {
