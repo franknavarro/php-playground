@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     # Only run if PHP-related files changed.
     paths:
-      - '.github/workflows/php.yml'
+      - '.github/workflows/php-lint-test.yml'
       - '**.php'
       - 'phpcs.xml.dist'
       - 'phpunit*.xml*'
@@ -14,7 +14,7 @@ on:
     branches: [ "main" ]
     # Only run if PHP-related files changed.
     paths:
-      - '.github/workflows/php.yml'
+      - '.github/workflows/php-lint-test.yml'
       - '**.php'
       - 'phpcs.xml.dist'
       - 'phpunit*.xml*'
