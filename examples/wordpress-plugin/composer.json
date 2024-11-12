@@ -1,0 +1,18 @@
+{
+    "name": "franknv/php-playground-plugin",
+    "description": "A simple WordPress plugin for fun.",
+    "type": "composer-plugin",
+    "license": "Apache-2.0",
+    "require": {
+        "franknv/php-playground": "@dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../",
+            "options": {
+                "symlink": false
+            }
+        }
+    ]
+}

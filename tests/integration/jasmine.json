@@ -1,0 +1,12 @@
+{
+  "spec_dir": "tests/integration",
+  "spec_files": [
+    "**/*_test.ts"
+  ],
+  "env": {
+    "failSpecWithNoExpectations": false,
+    "stopSpecOnExpectationFailure": false,
+    "stopOnSpecFailure": false,
+    "random": false
+  }
+}
