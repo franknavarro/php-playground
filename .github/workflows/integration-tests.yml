@@ -1,0 +1,85 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: [ "main" ]
+    # Ignore changes that wouldn't affect integration tests. This saves running
+    # the expensive integration test suite on GitHub Actions when all that's
+    # changing is files that would affect integration test behavior.
+    paths:
+      - '.github/workflows/integration-tests.yml'
+      - 'src/**/*.php'
+      - 'examples/**/*.php'
+      - 'tests/integration/**'
+      - 'composer.json'
+      - 'package.json'
+      - '!tests/unit/**'
+      - '!**/README*'
+  pull_request:
+    branches: [ "main" ]
+    # Ignore changes that wouldn't affect integration tests. This saves running
+    # the expensive integration test suite on GitHub Actions when all that's
+    # changing is files that would affect integration test behavior.
+    paths:
+      - '.github/workflows/integration-tests.yml'
+      - 'src/**/*.php'
+      - 'examples/**/*.php'
+      - 'tests/integration/**'
+      - 'composer.json'
+      - 'package.json'
+      - '!tests/unit/**'
+      - '!**/README*'
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+concurrency:
+  group: integration-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  integration-tests:
+    name: Integration Tests
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event_name == 'push' || github.event.pull_request.draft == false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js (.nvmrc)
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: npm install
+        run: npm ci
+
+      # Integration tests use a dedicated container, this is just for Composer.
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Composer Install
+        run: composer install --no-interaction --no-progress --no-dev
+
+      - name: Start environment
+        run: npm run env:start
+
+      - name: Run the tests
+        run: npm run test
