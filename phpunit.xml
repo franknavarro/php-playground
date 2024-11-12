@@ -1,0 +1,13 @@
+<phpunit
+        bootstrap="vendor/autoload.php"
+        backupGlobals="false"
+        processIsolation="false"
+        displayDetailsOnTestsThatTriggerDeprecations="true"
+        displayDetailsOnPhpunitDeprecations="true"
+        colors="true">
+    <testsuites>
+        <testsuite name="Tests for fun.">
+            <directory suffix=".php">./tests/unit/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

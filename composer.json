@@ -1,0 +1,28 @@
+{
+    "name": "franknv/php-playground",
+    "description": "Learn PHP and Github Actions.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpunit/phpunit": "^11.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyPHP\\Fun\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MyPHP\\Fun\\Test\\": "tests/unit"
+        }
+    },
+    "scripts": {
+        "fix": "phpcbf",
+        "lint": "phpcs",
+        "test": "phpunit"
+    }
+}
