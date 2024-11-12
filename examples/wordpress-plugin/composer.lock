@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4038b9496e3bb75ed215290ddcaa998c",
+    "packages": [
+        {
+            "name": "franknv/php-playground",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../..",
+                "reference": "509103196b82eee45f7e9ac6aedc9a31c47b9b10"
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.4",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyPHP\\Fun\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "MyPHP\\Fun\\Test\\": "tests/unit"
+                }
+            },
+            "scripts": {
+                "fix": [
+                    "phpcbf"
+                ],
+                "lint": [
+                    "phpcs"
+                ],
+                "test": [
+                    "phpunit"
+                ]
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Learn PHP and Github Workflows",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "franknv/php-playground": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
