@@ -4,7 +4,7 @@ namespace MyPHP\Fun;
 
 final class HelloWorld
 {
-    private const OBI = "Hello there.";
+    private const OBI = "Hello there..";
     private const CLASSIC = "Hello World!";
 
     public function greet()
