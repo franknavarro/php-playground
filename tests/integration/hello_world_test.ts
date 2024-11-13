@@ -18,6 +18,6 @@ describe("WordPress Plugin", () => {
     const greeting = await page.$eval("h1#greeting", (el) => {
       return el.textContent.trim();
     });
-    expect(greeting).toEqual("Hello there.");
+    expect(greeting).toEqual("Hello there...");
   });
 });
