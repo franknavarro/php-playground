@@ -1,6 +1,5 @@
 {
   "name": "php-playground",
-  "version": "1.0.0",
   "description": "Run tests for the PHP code.",
   "scripts": {
     "env:start": "./bin/start-wordpress.sh",
