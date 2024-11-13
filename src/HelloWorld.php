@@ -5,14 +5,8 @@ namespace MyPHP\Fun;
 final class HelloWorld
 {
     private const OBI = "Hello there...";
-    private const CLASSIC = "Hello World!";
     private const SPOCK = "Live long and prosper.";
-    private const DROID = "Roger. Roger.";
-
-    public function greet()
-    {
-        return self::CLASSIC;
-    }
+    private const DROID = "Roger! Roger!";
 
     public function greetSW()
     {
