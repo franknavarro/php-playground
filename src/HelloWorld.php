@@ -6,6 +6,7 @@ final class HelloWorld
 {
     private const OBI = "Hello there...";
     private const CLASSIC = "Hello World!!";
+    private const SPOCK = "Live long and prosper";
 
     public function greet()
     {
@@ -15,5 +16,10 @@ final class HelloWorld
     public function greetSW()
     {
         return self::OBI;
+    }
+
+    public function greetST()
+    {
+        return self::SPOCK;
     }
 }
