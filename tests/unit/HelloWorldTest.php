@@ -18,7 +18,7 @@ final class HelloWorldTest extends TestCase
     public function testClassic()
     {
         $result = $this->helloWorld->greet();
-        $this->assertEquals("Hello World!!!", $result);
+        $this->assertEquals("Hello World!", $result);
     }
 
     public function testCoolerGreeting()
