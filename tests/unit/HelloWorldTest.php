@@ -32,4 +32,10 @@ final class HelloWorldTest extends TestCase
         $result = $this->helloWorld->greetST();
         $this->assertEquals("Live long and prosper.", $result);
     }
+
+    public function testDroidGreeting()
+    {
+        $result = $this->helloWorld->greetDroid();
+        $this->assertEquals("Roger. Roger.", $result);
+    }
 }
