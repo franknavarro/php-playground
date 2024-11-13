@@ -6,7 +6,7 @@ final class HelloWorld
 {
     private const OBI = "Hello there...";
     private const CLASSIC = "Hello World!!";
-    private const SPOCK = "Live long and prosper";
+    private const SPOCK = "Live long and prosper.";
 
     public function greet()
     {

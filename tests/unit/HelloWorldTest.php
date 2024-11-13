@@ -30,6 +30,6 @@ final class HelloWorldTest extends TestCase
     public function testAnotherCoolGreeting()
     {
         $result = $this->helloWorld->greetST();
-        $this->assertEquals("Live long and prosper", $result);
+        $this->assertEquals("Live long and prosper.", $result);
     }
 }
