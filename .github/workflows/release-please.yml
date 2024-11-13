@@ -1,0 +1,33 @@
+name: Release Bumper
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+          release-type: php-yoshi
+          target-branch: main
+
+      # The logic below handles the package publication:
+      - name: Release Package
+        # Packagist should be able to pick up package versions automatically
+        # using webhooks and using tags marked on commits which is handled by
+        # release-please.
+        #
+        # https://packagist.org/about#:~:text=Managing%20package%20versions,the%20tag%20and%20branch%20names.&Branches%20will%20automatically%20appear%20as,Semantic%20Versioning%20is%20strongly%20encouraged.
+        run: echo "The PHP package is released. (Update to release to packagist)"
+        # these if statements ensure that a publication only occurs when
+        # a new release is created:
+        if: ${{ steps.release.outputs.release_created }}
