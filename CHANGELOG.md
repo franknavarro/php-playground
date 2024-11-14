@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.1.0](https://github.com/franknavarro/php-playground/compare/v3.0.0...v3.1.0) (2024-11-14)
+
+
+### Features
+
+* You can't get rid of a classic. ([815a616](https://github.com/franknavarro/php-playground/commit/815a6168d15b3314174b0790e89089fcb930810a))
+
+
+### Bug Fixes
+
+* Fix the naming of Old Ben. ([06837eb](https://github.com/franknavarro/php-playground/commit/06837eb5920e8ffcdeac51c915faf23a12f4dc82))
+* Make classic available again. ([815a616](https://github.com/franknavarro/php-playground/commit/815a6168d15b3314174b0790e89089fcb930810a))
+
+
+### Miscellaneous Chores
+
+* Add to the README. ([f837841](https://github.com/franknavarro/php-playground/commit/f837841f7e16474108d6c2591e7bb4dffc68f962))
+* Classic chores... ([815a616](https://github.com/franknavarro/php-playground/commit/815a6168d15b3314174b0790e89089fcb930810a))
+
 ## [3.0.0](https://github.com/franknavarro/php-playground/compare/v2.0.2...v3.0.0) (2024-11-13)
 
 
